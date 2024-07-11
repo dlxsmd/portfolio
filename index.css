@@ -1,0 +1,154 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  line-height: 1.6;
+  height: 100%;
+  color: #222;
+  background-color: rgb(240,247,251,.5019607843);
+}
+
+/* container */
+#container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0 2.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/*navigation_header*/
+header{
+  padding-right: 50%;
+}
+header ul {
+  display: flex;
+  padding-left: 0px;
+  justify-content: flex-start;
+  list-style: none;
+  align-items: left;
+  margin-top: 5px;
+  border-bottom:1px solid #ccc ;
+
+}
+header ul li {
+  display: flex;
+  margin-right: auto;
+}
+
+
+
+/* PGP */
+.info{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+
+}
+
+.info a{
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+
+/* footer */
+footer {
+  padding-left: 50%;
+}
+footer ul {
+  display: flex;
+  padding-left: 0px;
+  justify-content: flex-end;
+  list-style: none;
+  align-items: right;
+  margin-bottom: 5px;
+  border-top:1px solid #ccc ;
+}
+footer ul li {
+  display: flex;
+  margin-left: auto;
+}
+
+
+header nav ul li a, footer nav ul li a{
+  display: block;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  position: relative; /* 相対位置を指定して擬似要素を使用 */
+}
+
+header nav ul li a::after, footer nav ul li a::after,.info a::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 50%;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+  transition: width 0.5s;
+}
+
+header nav ul li a:hover::after, footer nav ul li a:hover::after, .info a:hover::after{
+  width: 100%;
+}
+
+/* info */
+.subtitle{
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0px;
+}
+h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+
+}
+
+.info {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+  }
+  #container{
+  margin: 0 auto;
+  }
+  header{
+    padding-right: 0%;
+  }
+  header ul{
+    justify-content: center;
+  }
+  header ul li{
+    margin-right: 0;
+    margin: auto;
+  }
+  footer {
+        padding-left: 0%;
+    }
+    footer ul{
+      justify-content: center;
+    }
+    footer ul li{
+      margin-left: 0;
+      margin: auto;
+    }
+}
