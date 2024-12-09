@@ -1,244 +1,251 @@
+:root {
+  --primary-font: 'Neue Haas Grotesk Display Pro', sans-serif;
+  --secondary-font: "M PLUS 1p", sans-serif;
+  --primary-color: #222;
+  --background-color: rgba(240, 247, 251, 0.5);
+  --link-hover-color: rgb(13, 87, 177);
+  --border-color: #ccc;
+}
+
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-family: var(--primary-font);
   line-height: 1.6;
   height: 100%;
-  color: #222;
-  background-color: rgba(240, 247, 251, 0.5);
+  color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
-/* container */
 #container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
   margin: 0 2.5em;
   padding: 0 20px;
 }
 
-/* main */
 main {
   display: flex;
   flex: 1;
   justify-content: space-between;
 }
 
-/* header */
 header {
   padding-right: 50%;
 }
-header ul {
+
+footer {
+  padding-left: 50%;
+  margin-top: auto;
+}
+
+header ul, footer ul {
   display: flex;
   list-style: none;
   padding-left: 0;
-  justify-content: flex-start;
-  margin-top: 5px;
-  border-bottom: 1px solid #ccc;
+  margin: 5px 0;
+  border-bottom: 1px solid var(--border-color);
 }
+
+footer ul {
+  justify-content: flex-end;
+  border-top: 1px solid var(--border-color);
+  border-bottom: none;
+}
+
 header ul li {
   margin-right: auto;
 }
 
-/* footer */
-footer {
-  padding-left: 50%;
-  margin-top: auto; /* Push footer to the bottom */
-}
-footer ul {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  justify-content: flex-end;
-  margin-bottom: 5px;
-  border-top: 1px solid #ccc;
-}
 footer ul li {
   margin-left: auto;
 }
 
-/* nav links and info links */
-.info a{
-  color: black;
+.info a, header nav ul li a, footer nav ul li a {
+  color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
   position: relative;
 }
-header nav ul li a, footer nav ul li a{
+
+header nav ul li a, footer nav ul li a {
   display: block;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
   padding: 10px;
-  position: relative;
 }
-header nav ul li a::after, footer nav ul li a::after, .info a::after {
+
+.info a::after, header nav ul li a::after, footer nav ul li a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
   bottom: 50%;
   left: 0;
-  background-color: black;
+  background-color: var(--primary-color);
   opacity: 0.7;
   transition: width 0.5s;
 }
-header nav ul li a:hover::after, footer nav ul li a:hover::after, .info a:hover::after {
+
+.info a:hover::after, header nav ul li a:hover::after, footer nav ul li a:hover::after {
   width: 100%;
 }
 
-/* info section */
 .info {
   flex: 1;
   text-align: left;
 }
-.subtitle p{
+
+.subtitle p {
   font-size: 1em;
-  margin: 0px;
+  margin: 0;
 }
 
-/* introduce */
-.introduce{
+.introduce {
   display: flex;
   flex-direction: column;
-  padding: 0 25% ;
+  padding: 0 25%;
 }
 
-.introduce p{
-  font-family: "M PLUS 1p", sans-serif;
+.introduce p {
+  font-family: var(--secondary-font);
 }
 
-/* heading */
 h1 {
   font-size: 3em;
   margin: 0;
 }
 
-/* products */
-.products{
+.products {
   text-align: right;
 }
-.products h2{
+
+.products h2 {
   margin: 0;
   padding: 0;
 }
 
-.products a{
+.products a {
   font-size: 1.75em;
-  color: black;
+  color: var(--primary-color);
   text-decoration: none;
 }
-.products a:hover{
-  color : rgb(13, 87, 177);
+
+.products a:hover {
+  color: var(--link-hover-color);
 }
 
-/* products */
 .products-detail {
   display: flex;
 }
-.products-img{
+
+.products-detail:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.products-img, .products-description {
   width: 50%;
+}
+
+.products-img {
   text-align: center;
 }
-.products-img img{
+
+.products-img img {
   width: 70%;
 }
-.products-description{
-  width: 50%;
+
+.products-description {
   text-align: left;
 }
-.products-description p{
-    font-family: "M PLUS 1p", sans-serif;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow-wrap: break-word;
- }
- .products-description a{
-  color: black;
-  text-decoration: none;
- }
-  .products-description a:hover{
-    color : rgb(13, 87, 177);
-  }
 
-/* for mobile */
+.products-description p {
+  font-family: var(--secondary-font);
+  margin: 0 0 1rem;
+  overflow-wrap: break-word;
+}
+
+.products-description a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.products-description a:hover {
+  color: var(--link-hover-color);
+}
+
+.slideshow-container {
+  position: absolute;
+  width: 10%;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 @media (max-width: 768px) {
   main {
     flex-direction: column;
   }
+
   #container {
     margin: 0 auto;
   }
-  header {
-    padding-right: 0;
+
+  header, footer {
+    padding: 0;
   }
-  header ul {
+
+  header ul, footer ul {
     justify-content: center;
   }
-  header ul li {
+
+  header ul li, footer ul li {
     margin: auto;
   }
-  footer {
-    padding-left: 0;
-  }
-  footer ul {
-    justify-content: center;
-  }
-  footer ul li {
-    margin: auto;
-  }
+
   .products-detail {
     flex-direction: column;
-    margin-bottom: 2em; /* セクション間のスペース */
+    margin-bottom: 2em;
   }
+
   .products-img, .products-description {
     width: 100%;
     text-align: center;
   }
-  
-  /* 画像を上に、文章を下にするためのスタイル */
+
   .products-detail .products-img {
     order: 1;
   }
+
   .products-detail .products-description {
     order: 2;
   }
-  .introduce{
+
+  .introduce {
     padding: 10%;
   }
-}
-
-
-/* スライドショーのスタイル */
-.slideshow-container {
-    position: absolute;
-    width: 10%;
-    margin: auto;
-}
-
-.mySlides {
-    display: none;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
