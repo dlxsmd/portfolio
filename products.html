@@ -1,74 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
     <link rel=”icon” href=“favicon/favicon.ico”>
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro?styles=82961,82965,82963" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro?styles=82961,82965,82963"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap"
+      rel="stylesheet"
+    />
     <title>YUKI IMAI</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="product.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-    <header>
+      <header>
         <nav>
-            <ul>
-                <li><a href="index.html">TOP</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="products.html">WORKS</a></li>
-            </ul>
+          <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="products.html">WORKS</a></li>
+          </ul>
         </nav>
         <h2>PRODUCTS</h2>
-    </header>
-    <main>
-        <div class="products-list">
-            <section class="products-detail" id="jecnavi">
-                <div class="products-img">
-                    <img src="img/jecnavi.png" alt="">
-                </div>
-                <div class="products-description">
-                    <h2>JecNavi</h2>
-                    <p>JecNaviは日本電子専門学校の学生およびそのご家族のための学校案内アプリです。</p>
-                    <p>公式サイトのニュースを取得するためのAPIや各建物へのルート案内、チャットでの簡易的な連絡までこのアプリで完結できるように制作しました。</p>
-                    <p>本学の特徴として留学生が多いため、複数の言語にも対応（今後のバージョンアップでさらに対応予定）</p>
-                    <p>GitHub:<a href="https://github.com/dlxsmd/JecNavi" target="_blank">https://github.com/dlxsmd/JecNavi</a></p>
-                    <p>制作期間1ヶ月弱（現時点）</p>
-                </div>
-            </section>
-            <section class="products-detail" id="toribuzoku">
-                <div class="products-img">
-                    <img src="img/toribuzoku.png" alt="">
-                </div>
-                <div class="products-description">
-                    <h2>鳥武族</h2>
-                    <p>文化祭で展示するために作ったARスワイプゲームです。</p>
-                    <p>ランキング機能はServerSideSwiftを用いてAPIを作成し、ARを使った個性の出せるアプリを目指して制作しました。</p>
-                    <p>留学生にも楽しんでもらえるように４ヶ国語へのダイナミックローカリゼーションに対応しています。</p>
-                    <p>GitHub(App):<a href="https://github.com/dlxsmd/Toribuzoku/tree/develop" target="_blank">https://github.com/dlxsmd/Toribuzoku</a></p>
-                    <p>Github(API&Site):<a href="https://github.com/dlxsmd/RankingApp" target="_blank">https://github.com/dlxsmd/RankingApp</a></p>
-                    <p>Site:<a href="https://rankingapp-production.up.railway.app/index.html" target="_blank">https://rankingapp-production.up.railway.app/index.html</a></p>
-                    <p>制作期間1ヶ月</p>
-                </div>
-            </section>
-        </div> 
-    </main>
-    <footer>
+      </header>
+      <main>
+        <div class="products-list" id="products-container">
+          <!-- ここにJavaScriptでコンテンツが挿入されます -->
+        </div>
+      </main>
+      <footer>
         <nav>
-            <ul>
-                <li><a href="https://github.com/dlxsmd" target="_blank">GITHUB</a></li>
-                <li><a href="404.html">BLOG</a></li>
-                <li><a href="404.html">CONTACT</a></li>
-            </ul>
+          <ul>
+            <li>
+              <a href="https://github.com/dlxsmd" target="_blank">GITHUB</a>
+            </li>
+            <li><a href="404.html">BLOG</a></li>
+            <li><a href="404.html">CONTACT</a></li>
+          </ul>
         </nav>
-    </footer>
-</div><!-- container -->
-</body>
+      </footer>
+    </div>
+    <!-- container -->
+  </body>
 </html>
