@@ -1,5 +1,5 @@
 :root {
-  --primary-font: 'Neue Haas Grotesk Display Pro', sans-serif;
+  --primary-font: "Neue Haas Grotesk Display Pro", sans-serif;
   --secondary-font: "M PLUS 1p", sans-serif;
   --primary-color: #222;
   --background-color: rgba(240, 247, 251, 0.5);
@@ -7,7 +7,8 @@
   --border-color: #ccc;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: var(--primary-font);
@@ -40,7 +41,8 @@ footer {
   margin-top: auto;
 }
 
-header ul, footer ul {
+header ul,
+footer ul {
   display: flex;
   list-style: none;
   padding-left: 0;
@@ -62,20 +64,25 @@ footer ul li {
   margin-left: auto;
 }
 
-.info a, header nav ul li a, footer nav ul li a {
+.info a,
+header nav ul li a,
+footer nav ul li a {
   color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
   position: relative;
 }
 
-header nav ul li a, footer nav ul li a {
+header nav ul li a,
+footer nav ul li a {
   display: block;
   padding: 10px;
 }
 
-.info a::after, header nav ul li a::after, footer nav ul li a::after {
-  content: '';
+.info a::after,
+header nav ul li a::after,
+footer nav ul li a::after {
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -86,7 +93,9 @@ header nav ul li a, footer nav ul li a {
   transition: width 0.5s;
 }
 
-.info a:hover::after, header nav ul li a:hover::after, footer nav ul li a:hover::after {
+.info a:hover::after,
+header nav ul li a:hover::after,
+footer nav ul li a:hover::after {
   width: 100%;
 }
 
@@ -142,7 +151,8 @@ h1 {
   flex-direction: row-reverse;
 }
 
-.products-img, .products-description {
+.products-img,
+.products-description {
   width: 50%;
 }
 
@@ -183,7 +193,8 @@ h1 {
   display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -202,7 +213,8 @@ h1 {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -215,15 +227,18 @@ h1 {
     margin: 0 auto;
   }
 
-  header, footer {
+  header,
+  footer {
     padding: 0;
   }
 
-  header ul, footer ul {
+  header ul,
+  footer ul {
     justify-content: center;
   }
 
-  header ul li, footer ul li {
+  header ul li,
+  footer ul li {
     margin: auto;
   }
 
@@ -232,7 +247,8 @@ h1 {
     margin-bottom: 2em;
   }
 
-  .products-img, .products-description {
+  .products-img,
+  .products-description {
     width: 100%;
     text-align: center;
   }
